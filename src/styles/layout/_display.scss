@@ -1,0 +1,26 @@
+@use "../utils/" as u;
+
+.display {
+  background-color: var(--dark-grey);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: u.rem(16);
+  margin-block-start: u.rem(16);
+
+  button {
+    background: none;
+    border: none;
+  }
+
+  &__text {
+    font-size: u.rem(24);
+    line-height: u.rem(32);
+    color: var(--almost-white);
+  }
+
+  &__image {
+    width: u.rem(17.5);
+    height: u.rem(20);
+  }
+}

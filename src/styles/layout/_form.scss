@@ -1,0 +1,27 @@
+@use "../utils/" as u;
+
+.form {
+  background-color: var(--dark-grey);
+  margin-block-start: u.rem(16);
+  padding: u.rem(16);
+
+  .length {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__text {
+      font-size: u.rem(16);
+      line-height: u.rem(21);
+      color: var(--almost-white);
+    }
+
+    &__number {
+      display: block;
+      font-size: u.rem(24);
+      line-height: u.rem(32);
+
+      color: var(--neon-green);
+    }
+  }
+}
