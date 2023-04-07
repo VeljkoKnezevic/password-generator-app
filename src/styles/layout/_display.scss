@@ -17,6 +17,9 @@
     font-size: u.rem(24);
     line-height: u.rem(32);
     color: var(--almost-white);
+    opacity &--empty {
+      opacity: 0.25;
+    }
   }
 
   &__image {
