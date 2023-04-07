@@ -1,9 +1,16 @@
 import { useState } from "react";
 import Slider from "rc-slider";
 import "./styles/styles.scss";
+import "rc-slider/assets/index.css";
 
 const App = () => {
   const [length, setLength] = useState<number>(0);
+
+  const handleSliderChange = (newValue: number | number[]) => {
+    if (typeof newValue === "number") {
+      setLength(newValue);
+    }
+  };
 
   return (
     <main className="main">
@@ -24,13 +31,7 @@ const App = () => {
           <p className="length__text">Character Length</p>
           <span className="length__number">{length}</span>
         </div>
-        <Slider
-          defaultValue={0}
-          step={1}
-          value={length}
-          startPoint={0}
-          max={20}
-        />
+        <Slider min={0} max={20} value={length} onChange={handleSliderChange} />
         <div className="checks">
           <label htmlFor="uppercase">
             <input type="checkbox" id="uppercase" />
