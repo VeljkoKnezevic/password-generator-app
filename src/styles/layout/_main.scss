@@ -4,10 +4,21 @@
   margin-inline: u.rem(16);
   margin-block-start: u.rem(64);
 
+  @include u.breakpoint(medium) {
+    max-width: u.rem(540);
+    margin-inline: auto;
+    margin-block-start: u.rem(133);
+  }
+
   .heading {
     font-size: u.rem(16);
     line-height: u.rem(21);
     text-align: center;
     color: var(--grey);
+
+    @include u.breakpoint(medium) {
+      font-size: u.rem(24);
+      line-height: u.rem(32);
+    }
   }
 }

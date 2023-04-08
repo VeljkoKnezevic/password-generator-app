@@ -2,10 +2,11 @@ import { useState } from "react";
 import "./styles/styles.scss";
 import Form from "./components/Form";
 import Display from "./components/Display";
+import { PasswordEnum } from "./PasswordEnum";
 
 const App = () => {
   const [length, setLength] = useState<number>(0);
-  const [password, setPassword] = useState<string>("P4$5W0rD!");
+  const [password, setPassword] = useState<string>(PasswordEnum.Empty);
 
   return (
     <main className="main">

@@ -8,15 +8,46 @@
   padding: u.rem(16);
   margin-block-start: u.rem(16);
 
+  @include u.breakpoint(medium) {
+    padding: u.rem(19) u.rem(32);
+    margin-block-start: u.rem(31);
+  }
+
   button {
     background: none;
     border: none;
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .copied {
+    font-size: u.rem(18);
+    line-height: u.rem(24);
+    color: var(--neon-green);
+    text-transform: uppercase;
+    margin-inline-start: auto;
+    margin-inline-end: u.rem(16);
+    animation-name: fade-out;
+    animation-duration: 1s;
+    animation-delay: 1s;
   }
 
   &__text {
     font-size: u.rem(24);
     line-height: u.rem(32);
     color: var(--almost-white);
+
+    @include u.breakpoint(medium) {
+      font-size: u.rem(32);
+      line-height: u.rem(42);
+    }
 
     &--empty {
       opacity: 0.25;
@@ -26,5 +57,10 @@
   &__image {
     width: u.rem(17.5);
     height: u.rem(20);
+
+    @include u.breakpoint(medium) {
+      width: u.rem(21);
+      height: u.rem(24);
+    }
   }
 }

@@ -1,10 +1,31 @@
+import { useEffect, useState } from "react";
+import { PasswordEnum } from "../PasswordEnum";
+
 type DisplayTypes = {
   password: string;
 };
 
 const Display = ({ password }: DisplayTypes) => {
+  const [clicked, setClicked] = useState<boolean>(false);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (password) {
+      timeout = setTimeout(() => {
+        if (clicked) setClicked(false);
+      }, 2000);
+    }
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [clicked]);
+
   const handleCopyButtonClick = () => {
-    navigator.clipboard.writeText(password);
+    if (password !== PasswordEnum.Empty) {
+      setClicked(true);
+      navigator.clipboard.writeText(password);
+    }
   };
 
   return (
@@ -16,6 +37,7 @@ const Display = ({ password }: DisplayTypes) => {
       >
         {password}
       </p>
+      {clicked ? <div className="copied">Copied</div> : ""}
       <button onClick={handleCopyButtonClick} type="button">
         <img
           className="display__image"
