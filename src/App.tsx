@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./styles/styles.scss";
-import { passwordStrength } from "check-password-strength";
 import Form from "./components/Form";
 import Display from "./components/Display";
 

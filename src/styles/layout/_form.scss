@@ -70,6 +70,16 @@
     }
 
     .rating {
+      display: flex;
+      align-items: center;
+      gap: u.rem(16);
+
+      &__text {
+        font-size: u.rem(18);
+        line-height: u.rem(24);
+        color: var(--almost-white);
+      }
+
       &__bars {
         display: flex;
         gap: u.rem(8);
@@ -79,6 +89,24 @@
         border: 2px solid var(--almost-white);
         width: u.rem(10);
         height: u.rem(28);
+      }
+
+      .too-weak {
+        background-color: var(--red);
+        border-color: var(--red);
+      }
+      .weak {
+        background-color: var(--orange);
+        border-color: var(--orange);
+      }
+
+      .medium {
+        background-color: var(--yellow);
+        border-color: var(--yellow);
+      }
+      .strong {
+        background-color: var(--neon-green);
+        border-color: var(--neon-green);
       }
     }
   }

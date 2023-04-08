@@ -3,6 +3,10 @@ type DisplayTypes = {
 };
 
 const Display = ({ password }: DisplayTypes) => {
+  const handleCopyButtonClick = () => {
+    navigator.clipboard.writeText(password);
+  };
+
   return (
     <div className="display">
       <p
@@ -12,7 +16,7 @@ const Display = ({ password }: DisplayTypes) => {
       >
         {password}
       </p>
-      <button type="button">
+      <button onClick={handleCopyButtonClick} type="button">
         <img
           className="display__image"
           src="/assets/images/icon-copy.svg"
