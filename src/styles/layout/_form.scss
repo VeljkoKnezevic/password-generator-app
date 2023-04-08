@@ -75,6 +75,11 @@
         background-repeat: no-repeat;
         background-position: center;
       }
+
+      &:hover {
+        cursor: pointer;
+        border-color: var(--neon-green);
+      }
     }
   }
 
@@ -153,24 +158,31 @@
     width: 100%;
     margin-block-start: u.rem(16);
     background-color: var(--neon-green);
-    border: none;
+    border: 2px solid var(--neon-green);
     font-family: "JetBrains Mono";
     font-weight: 700;
     font-size: u.rem(16);
     line-height: u.rem(21);
     text-transform: uppercase;
     color: var(--dark-grey);
-    padding: u.rem(17);
+    padding: u.rem(15);
     background-image: url(/assets/images/icon-arrow-right.svg);
     background-repeat: no-repeat;
     background-position: top 49% left calc(50% + 60px);
 
     @include u.breakpoint(medium) {
       margin-block-start: u.rem(32);
-      padding: u.rem(21);
+      padding: u.rem(19);
       font-size: u.rem(18);
       line-height: u.rem(24);
-      background-position: top 49% left calc(50% + 80px);
+      background-position: top 49% left calc(50% + 70px);
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-image: url(/assets/images/icon-arrow-right-green.svg);
+      background-color: var(--dark-grey);
+      color: var(--neon-green);
     }
   }
 }

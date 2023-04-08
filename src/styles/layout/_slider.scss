@@ -22,6 +22,9 @@
 
     &:hover {
       cursor: pointer;
+      background-color: var(--very-dark-grey) !important;
+      border: 2px solid var(--neon-green) !important;
+      box-shadow: none !important;
     }
 
     &:focus {

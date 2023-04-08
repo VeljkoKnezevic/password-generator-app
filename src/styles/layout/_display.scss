@@ -62,5 +62,10 @@
       width: u.rem(21);
       height: u.rem(24);
     }
+
+    &:hover {
+      cursor: pointer;
+      filter: brightness(0) invert(1);
+    }
   }
 }
